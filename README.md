@@ -21,7 +21,7 @@ You can find more about objects definitions [here.] (https://assets.nagios.com/d
     object:[object type] **this line is required**
     key:value
 
-### TXT file exemple:
+### TXT file example:
     object:host
     host_name:host_hell
     alias:host_hell
