@@ -32,11 +32,10 @@ for line in r.readlines():
     value = line.split(":")[1]
     if key == "object":
         object = value.rstrip("\n")
-    elif key == "host_name":
-        host_name = value.rstrip("\n")
         items = {key : value.rstrip("\n")}
         key_value.append(items)
-    else:
+    elif key == "host_name":
+        host_name = value.rstrip("\n")
         items = {key : value.rstrip("\n")}
         key_value.append(items)
 
