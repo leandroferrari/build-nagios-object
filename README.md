@@ -2,21 +2,23 @@
 Build nagios objects from txt files.
 
 ## Objects type supported:
-* host
-* hostgroup
-* service
-* servicegroup
-* contact
-* contactgroup
-* timeperiod
-* command
-* servicedependency
-* serviceescalation
-* hostextinfo
-* serviceextinfo
+* host;
+* hostgroup;
+* service;
+* servicegroup;
+* contact;
+* contactgroup;
+* timeperiod;
+* command;
+* servicedependency;
+* serviceescalation;
+* hostextinfo;
+* serviceextinfo;
+
+You can find more about objects definitions [here.] (https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/objectdefinitions.html)
 
 ## TXT file format:
-    object:[object type]
+    object:[object type] **this line is required**
     key:value
 
 ### TXT file exemple:
@@ -28,3 +30,6 @@ Build nagios objects from txt files.
     contacts:admin
     display_name:Host Hell
     notes:some note here
+
+## Usage:
+python build-nagios-object.py [txt file]
