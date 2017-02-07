@@ -31,5 +31,10 @@ You can find more about objects definitions [here.] (https://assets.nagios.com/d
     display_name:Host Hell
     notes:some note here
 
+## Prerequisites:
+    python 2.6.x, 2.7.x
+    jinja2
+
+
 ## Usage:
 python build-nagios-object.py [txt file]
