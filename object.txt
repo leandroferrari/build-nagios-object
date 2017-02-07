@@ -1,0 +1,8 @@
+object:host
+host_name:host_hell
+alias:host_hell
+address:192.168.0.168
+hostgroup:server_group
+contacts:admin
+display_name:Host Hell
+notes:some note here
