@@ -35,6 +35,8 @@ You can find more about objects definitions [here.] (https://assets.nagios.com/d
     python 2.6.x, 2.7.x
     jinja2
 
-
 ## Usage:
 python build-nagios-object.py [txt file]
+
+## License
+Licensed under the [MIT](LICENSE.txt) License.
