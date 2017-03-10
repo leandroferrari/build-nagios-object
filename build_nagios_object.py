@@ -9,7 +9,9 @@ from string import rstrip
 try:
     file_txt = str(sys.argv[1])
 except IndexError:
+    print ""
     print "usage: python nagios_object.py [txt_file]"
+    print ""
     sys.exit(0)
 
 # jinja2 environment
