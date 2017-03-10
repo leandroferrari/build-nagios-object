@@ -17,14 +17,15 @@ loader = jinja2.FileSystemLoader(os.getcwd())
 jenv = jinja2.Environment(loader=loader)
 define_template = jenv.get_template("templates/object_template.j2")
 
-# def open file mode: "r" = read, "a" = append
+# Open TXT file
 r = open(file_txt, "r")
 
-# jinja2 variables
+# Set jinja2 variables
 object = ""
 host_name = ""
 key_value = []
 
+# Function to write final cfg file
 def write_file(host_name):
     # call jinja2 template
     define_file = define_template.render(host_name=host_name, 
@@ -36,11 +37,12 @@ def write_file(host_name):
     w.close()
     print define_file
 
-# read txt file and populate jinja2 variables
+# Read TXT file and populate jinja2 variables
 for line in r.readlines():
-    #print line.splitlines()
     if line == "\n":
+        # Write the first object and so on when find a blank line in TXT file
         write_file(host_name)
+        # Reset jinja2 variables
         object = ""
         host_name = ""
         key_value = []
@@ -50,8 +52,6 @@ for line in r.readlines():
 
         if key == "object":
             object = value.rstrip("\n")
-            #items = {key : value.rstrip("\n")}
-            #key_value.append(items)
         elif key == "host_name":
             host_name = value.rstrip("\n")
             items = {key : value.rstrip("\n")}
