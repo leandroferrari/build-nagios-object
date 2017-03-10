@@ -1,5 +1,5 @@
-object:host
-host_name:host_hell
+object:service
+host_name:host_hell3
 alias:host_hell
 address:192.168.0.168
 hostgroup:server_group

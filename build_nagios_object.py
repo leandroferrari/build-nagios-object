@@ -38,6 +38,9 @@ for line in r.readlines():
         host_name = value.rstrip("\n")
         items = {key : value.rstrip("\n")}
         key_value.append(items)
+    else:
+        items = {key : value.rstrip("\n")}
+        key_value.append(items)
 
 # call jinja2 template
 define_file = define_template.render(host_name=host_name, object=object, list=key_value)

@@ -3,10 +3,10 @@
 # {{ host_name }}
 # ------------------------------------------------------------------------------
 
-define {{object}}{
+define {{object}} {
 {% for item in list%}
     {%- for key, value in item.items()%}
-        {{key}}    {{value}}
+        {{key.ljust(30)}}    {{value}}
     {%- endfor %}    
 {%- endfor %}
 }
