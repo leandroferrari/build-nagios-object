@@ -25,29 +25,39 @@ object = ""
 host_name = ""
 key_value = []
 
+def write_file(host_name):
+    # call jinja2 template
+    define_file = define_template.render(host_name=host_name, 
+                                        object=object, 
+                                        list=key_value)
+    # write cfg file
+    w = open("object_file/" + host_name + ".cfg", "a")
+    w.write(define_file)
+    w.close()
+    print define_file
+
 # read txt file and populate jinja2 variables
 for line in r.readlines():
-    print line.splitlines()
-    if line != "\n":
+    #print line.splitlines()
+    if line == "\n":
+        write_file(host_name)
+        object = ""
+        host_name = ""
+        key_value = []
+    else:
         key = line.split(":")[0]
         value = line.split(":")[1]
-    if key == "object":
-        object = value.rstrip("\n")
-        items = {key : value.rstrip("\n")}
-        key_value.append(items)
-    elif key == "host_name":
-        host_name = value.rstrip("\n")
-        items = {key : value.rstrip("\n")}
-        key_value.append(items)
-    else:
-        items = {key : value.rstrip("\n")}
-        key_value.append(items)
 
-# call jinja2 template
-define_file = define_template.render(host_name=host_name, object=object, list=key_value)
+        if key == "object":
+            object = value.rstrip("\n")
+            #items = {key : value.rstrip("\n")}
+            #key_value.append(items)
+        elif key == "host_name":
+            host_name = value.rstrip("\n")
+            items = {key : value.rstrip("\n")}
+            key_value.append(items)
+        else:
+            items = {key : value.rstrip("\n")}
+            key_value.append(items)
 
-# write cfg file
-w = open("object_file/" + host_name + ".cfg", "w")
-w.write(define_file)
-w.close()
-print define_file
+write_file(host_name)

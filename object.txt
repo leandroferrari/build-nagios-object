@@ -6,8 +6,27 @@ hostgroup:server_group
 contacts:admin
 display_name:Host Hell
 notes:some note here
+adm:administrator
 
 object:service
+host_name:host_hell3
+alias:host_hell
+address:192.168.0.168
+hostgroup:server_group
+contacts:admin
+display_name:Host Hell
+notes:some note here
+
+object:hostgroup
+host_name:host_hell3
+alias:host_hell
+address:192.168.0.168
+hostgroup:server_group
+contacts:admin
+display_name:Host Hell
+notes:some note here
+
+object:servicegroup
 host_name:host_hell3
 alias:host_hell
 address:192.168.0.168
